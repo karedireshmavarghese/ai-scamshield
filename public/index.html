@@ -3,213 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AI ScamShield</title>
-    <style>
-        :root {
-            --bg: #0f172a;
-            --panel: #111827;
-            --panel-alt: #1f2937;
-            --text: #e5e7eb;
-            --muted: #94a3b8;
-            --primary: #38bdf8;
-            --primary-strong: #0ea5e9;
-            --success: #22c55e;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --border: rgba(148, 163, 184, 0.2);
-            --shadow: rgba(15, 23, 42, 0.5);
-        }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #020817 0%, var(--bg) 100%);
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 32px 16px;
-        }
-
-        .container {
-            width: min(100%, 760px);
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        h1 {
-            margin: 0 0 8px;
-            font-size: clamp(2.2rem, 5vw, 3rem);
-        }
-
-        .subtitle {
-            margin: 0;
-            color: var(--muted);
-            font-size: 1.05rem;
-        }
-
-        .card {
-            background: rgba(17, 24, 39, 0.9);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            box-shadow: 0 20px 45px var(--shadow);
-            padding: 24px;
-            backdrop-filter: blur(8px);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 700;
-            color: var(--text);
-        }
-
-        textarea {
-            width: 100%;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            background: rgba(15, 23, 42, 0.9);
-            color: var(--text);
-            font: inherit;
-            padding: 16px;
-            resize: vertical;
-            min-height: 180px;
-            outline: none;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        textarea:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
-        }
-
-        .actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 18px;
-            margin-bottom: 20px;
-        }
-
-        button {
-            border: none;
-            border-radius: 12px;
-            padding: 12px 18px;
-            font: inherit;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.15s ease, opacity 0.15s ease;
-        }
-
-        button:hover {
-            transform: translateY(-1px);
-        }
-
-        button:active {
-            transform: translateY(0);
-        }
-
-        #scanButton {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
-            color: #082f49;
-        }
-
-        #clearButton {
-            background: rgba(148, 163, 184, 0.12);
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-
-        .result {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            min-height: 120px;
-            padding: 18px;
-            color: var(--text);
-        }
-
-        .result.placeholder {
-            color: var(--muted);
-        }
-
-        .result-title {
-            margin: 0 0 8px;
-            font-size: 1.1rem;
-        }
-
-        .result-score {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 12px;
-            border-radius: 999px;
-            background: rgba(34, 197, 94, 0.12);
-            color: var(--success);
-            font-weight: 700;
-        }
-
-        .result-warning {
-            background: rgba(245, 158, 11, 0.12);
-            color: var(--warning);
-        }
-
-        .result-danger {
-            background: rgba(239, 68, 68, 0.12);
-            color: var(--danger);
-        }
-
-        @media (max-width: 520px) {
-            .card {
-                padding: 18px;
-            }
-
-            .actions {
-                flex-direction: column;
-            }
-
-            button {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>🛡️ AI ScamShield</h1>
-            <p class="subtitle">Detect scams and understand why a message may be suspicious.</p>
-        </header>
 
-        <main class="card">
-            <label for="message">Paste a suspicious message</label>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🛡️</span>
+            <span>AI ScamShield</span>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            AI Protection
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <div class="badge">
+                🧠 AI-Powered Scam Detection
+            </div>
+
+            <h1>
+                Detect Scams.<br>
+                <span>Understand Why.</span>
+            </h1>
+
+            <p class="hero-text">
+                Analyze suspicious messages and discover whether they are
+                likely to be a scam, legitimate, or need verification.
+            </p>
+
+        </section>
+
+
+        <section class="scanner-card">
+
+            <div class="card-header">
+                <div>
+                    <h2>🔍 Scan a Message</h2>
+                    <p>Paste the suspicious SMS, email, or message below.</p>
+                </div>
+
+                <div class="secure-label">
+                    🔒 Secure Analysis
+                </div>
+            </div>
+
+
             <textarea
                 id="message"
-                placeholder="Paste a suspicious message here..."
-                rows="10"
-                cols="50"
-                aria-label="Suspicious message input"
+                placeholder="Example: Congratulations! You have won ₹50,000. Click the link below immediately to claim your reward..."
             ></textarea>
 
-            <div class="actions">
-                <button id="scanButton" type="button">🔍 Scan Message</button>
-                <button id="clearButton" type="button">Clear</button>
+
+            <div class="input-footer">
+
+                <span id="characterCount">
+                    0 characters
+                </span>
+
+                <button id="clearButton" class="clear-button">
+                    Clear
+                </button>
+
             </div>
 
-            <div id="result" class="result placeholder" aria-live="polite">
-                Your scam assessment will appear here.
-            </div>
-        </main>
-    </div>
 
-    <script src="./app.js" defer></script>
+            <button id="scanButton" class="scan-button">
+                <span>🔍</span>
+                Scan for Scam
+            </button>
+
+        </section>
+
+
+        <section id="loading" class="loading-card hidden">
+
+            <div class="loader"></div>
+
+            <div>
+                <h3>Analyzing message...</h3>
+                <p>
+                    ScamShield is checking the content for suspicious signals.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section id="result" class="result-card hidden">
+
+            <div class="result-top">
+
+                <div>
+                    <p class="result-label">
+                        ANALYSIS RESULT
+                    </p>
+
+                    <h2 id="verdict">
+                        —
+                    </h2>
+                </div>
+
+                <div class="risk-box">
+
+                    <span>Risk Score</span>
+
+                    <strong id="riskScore">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="risk-bar-container">
+
+                <div
+                    id="riskBar"
+                    class="risk-bar">
+                </div>
+
+            </div>
+
+
+            <div class="result-section">
+
+                <h3>📌 Scam Category</h3>
+
+                <p id="category">
+                    —
+                </p>
+
+            </div>
+
+
+            <div class="result-section">
+
+                <h3>🔍 Why did ScamShield reach this conclusion?</h3>
+
+                <div id="reasons" class="reasons-list">
+                </div>
+
+            </div>
+
+
+            <div class="result-section">
+
+                <h3>🛡️ Safety Recommendation</h3>
+
+                <div id="recommendation" class="recommendation">
+                    —
+                </div>
+
+            </div>
+
+
+            <div class="disclaimer">
+
+                ⚠️ ScamShield provides an automated assessment and cannot
+                guarantee that a message is genuine or fraudulent.
+                Always independently verify important requests.
+
+            </div>
+
+        </section>
+
+
+        <section class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🧠
+                </div>
+
+                <h3>AI Analysis</h3>
+
+                <p>
+                    Understands suspicious patterns in messages.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🔎
+                </div>
+
+                <h3>Explainable Results</h3>
+
+                <p>
+                    Shows the actual reasons behind the risk score.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🛡️
+                </div>
+
+                <h3>Safety First</h3>
+
+                <p>
+                    Provides practical guidance before you take action.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 AI ScamShield · Built for safer digital communication
+        </p>
+
+    </footer>
+
+
+    <script src="app.js"></script>
+
 </body>
 </html>
